@@ -238,7 +238,7 @@ def plot_chart_plotly(df, is_simulated=False):
 # ==========================================
 # KHU VỰC CHÍNH (TABS)
 # ==========================================
-st.title("📊 VN30 Quant Dashboard: Rủi ro Hệ thống")
+st.title("📊 VN30 Price Momentium Monitor : Structural Break Warrning")
 
 if not st.session_state.is_loaded:
     st.info("👈 Vui lòng cấu hình ngày tháng và bấm nút 'Tải dữ liệu' ở thanh bên trái để bắt đầu.")
@@ -275,4 +275,5 @@ else:
             if scenario_val != 0.0:
                 df_sim = process_data(df_c_raw, df_v_raw, scenario_pct=scenario_val, stdev_win=stdev_window, vol_noise=vol_noise_val)
                 fig_sim = plot_chart_plotly(df_sim, is_simulated=True)
+
                 st.plotly_chart(fig_sim, use_container_width=True)
